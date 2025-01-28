@@ -24,6 +24,16 @@ credentials:
       password_hint: water
       roles:
       - general user
+    jseed:
+      email: jseed@gmail.com
+      failed_login_attempts: 0
+      first_name: Johnny
+      last_name: Appleseed
+      logged_in: true
+      password: $2b$12$MsB3o8jyvOtvwZoAZrmE2eXL0.RsBqIYYonI7FL6qKn6L0ksVouw2
+      password_hint: water
+      roles:
+      - general user
     jsmith:
       email: jsmith@gmail.com
       failed_login_attempts: 0

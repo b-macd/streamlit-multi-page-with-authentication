@@ -11,26 +11,24 @@ authenticator = stauth.Authenticate(
     config['credentials'],
     config['cookie']['name'],
     config['cookie']['key'],
-    config['cookie']['expiry_days'],
+    config['cookie']['expiry_days']
 )
 
 if st.session_state['authentication_status']:
-    with st.sidebar:
-        authenticator.logout()
-        st.success('Login Successfull!')
-        st.write(f'Welcome *{st.session_state["name"]}*')
-        st.write(f'Current Role: *{st.session_state["roles"][0]}*')
+    if st.session_state.roles[0] == 'admin':
+        with st.sidebar:
+            authenticator.logout()
+            st.write(f'Welcome *{st.session_state["name"]}*')
+            st.write(f'Current Role: *{st.session_state["roles"][0]}*')
+    else:
+        st.switch_page('Home_Page.py')
+        st.stop()
 elif st.session_state['authentication_status'] is False:
     st.switch_page('pages/User_Login.py')
 elif st.session_state['authentication_status'] is None:
     st.switch_page('pages/User_Login.py')
 
-st.title('This is the homepage')
+st.title('This is the Admin Page')
 
 st.divider()
 
-st.page_link('pages/App_1.py', label='This is the link to App 1')
-
-st.divider()
-
-st.page_link('pages/App_2.py', label='This is the link to App 2')
