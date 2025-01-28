@@ -1,0 +1,44 @@
+cookie:
+  expiry_days: 0
+  key: random
+  name: mycoockie
+credentials:
+  usernames:
+    bmacd:
+      email: bmacd@gmail.com
+      failed_login_attempts: 0
+      first_name: ben
+      last_name: macdonald
+      logged_in: true
+      password: $2b$12$8oWx3FGdlmOVKAJYgp7eROfhdAHZdmWS23AbtXQb7Rw8KfOpURlOm
+      password_hint: water
+      roles:
+      - admin
+    dsmith:
+      email: dsmith@gmail.com
+      failed_login_attempts: 0
+      first_name: Dave
+      last_name: Smith
+      logged_in: true
+      password: $2b$12$Op7gO2DzqOh7i0Sp1gcbr.91UqA8cpKQBhQ4v1j9LK.UvLi3td9QK
+      password_hint: water
+      roles:
+      - general user
+    jsmith:
+      email: jsmith@gmail.com
+      failed_login_attempts: 0
+      first_name: John
+      last_name: Smith
+      logged_in: false
+      password: $2b$12$OsECCbEtbTPLALNILG/MH.gPBl.7WzBRn81HWRSewfP0Pqg.HvqxG
+      roles:
+      - viewer
+    rbriggs:
+      email: rbriggs@gmail.com
+      failed_login_attempts: 0
+      first_name: Rebecca
+      last_name: Briggs
+      logged_in: false
+      password: $2b$12$tmv1HlyBxXJDnpV/QY3qweLz5AWN9bGLPQhPWHcTrwBhfqr/JG5cW
+      roles:
+      - viewer
