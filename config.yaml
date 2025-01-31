@@ -10,7 +10,7 @@ credentials:
       first_name: ben
       last_name: macdonald
       logged_in: true
-      password: $2b$12$8oWx3FGdlmOVKAJYgp7eROfhdAHZdmWS23AbtXQb7Rw8KfOpURlOm
+      password: $2b$12$UeFbPpjU6Ybbbmi.kLCjOuziTglEE.KyGtLjBwCOVBMQsPvM72you
       password_hint: water
       roles:
       - admin
@@ -33,7 +33,7 @@ credentials:
       password: $2b$12$MsB3o8jyvOtvwZoAZrmE2eXL0.RsBqIYYonI7FL6qKn6L0ksVouw2
       password_hint: water
       roles:
-      - general user
+      - admin
     jsmith:
       email: jsmith@gmail.com
       failed_login_attempts: 0
