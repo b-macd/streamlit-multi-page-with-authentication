@@ -2,6 +2,10 @@ import streamlit as st
 import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
+from error_checks import run_error_checks  # Import the error check function
+
+# Run error checks
+#run_error_checks()
 
 # Initialize session state roles and load configuration.
 # 1. Check if 'roles' is not in the Streamlit session state:
@@ -52,7 +56,7 @@ def registration():
     try:
         email_of_registered_user, \
         username_of_registered_user, \
-        name_of_registered_user = authenticator.register_user(roles=['general user'])
+        name_of_registered_user = authenticator.register_user(roles=['general user'],captcha=False)
         if email_of_registered_user:
             st.success('User registered successfully')
             with open(config_file_path, 'w') as file:
