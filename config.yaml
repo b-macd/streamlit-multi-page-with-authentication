@@ -6,7 +6,7 @@ credentials:
   usernames:
     bmacd:
       email: bmacd@gmail.com
-      failed_login_attempts: 0
+      failed_login_attempts: 1
       first_name: ben
       last_name: macdonald
       logged_in: true
