@@ -215,7 +215,7 @@ reset_password_page = st.Page(reset_password, title='Reset Password')
 #settings = st.Page("settings.py", title="Settings", icon=":material/settings:")
 home_page  = st.Page("landingpage/home_page.py",
     title="Home Page",
-    icon="🏠",
+    icon=":material/house:",
     default=(role in ["general user", 'admin']),
 )
 app_1 = st.Page(
