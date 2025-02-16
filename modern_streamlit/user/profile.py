@@ -2,18 +2,18 @@ import streamlit as st
 import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
+import streamlit.components.v1 as components
+
+st.title('Profile')
+
+
+st.divider()
 
 config_file_path = st.secrets.config_file_path
 with open(config_file_path) as file:
     config = yaml.load(file, Loader=SafeLoader)
 
-
-st.title('This is the Admin Page')
-
-st.divider()
-
-
-user_name = st.selectbox('Choose a user', options= config['credentials']['usernames'].keys())
+user_name = st.session_state.username
 
 first_name = config['credentials']['usernames'][user_name]['first_name']
 last_name = config['credentials']['usernames'][user_name]['last_name']
@@ -37,15 +37,3 @@ with col2:
             {user_role}
             """
             )
-
-if st.toggle('Change user role'):
-    new_role = st.selectbox('Available roles', options=['general user', 'admin'])
-    change_role = st.button('Make Change')
-    if change_role:
-        config['credentials']['usernames'][user_name]['roles'][0] = new_role
-        with open(config_file_path, 'w') as file:
-            yaml.dump(config, file, default_flow_style=False)
-        st.rerun()
-
-
-

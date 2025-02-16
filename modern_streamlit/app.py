@@ -211,7 +211,7 @@ role = st.session_state.roles[0]
 # Step 2: Define Streamlit pages
 registration_page = st.Page(registration, title='New User Registration', icon = ':material/person_add:')
 logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
-reset_password_page = st.Page(reset_password, title='Reset Password')
+reset_password_page = st.Page(reset_password, title='Reset Password', icon = ':material/lock_reset:')
 #settings = st.Page("settings.py", title="Settings", icon=":material/settings:")
 home_page  = st.Page("landingpage/home_page.py",
     title="Home Page",
@@ -233,8 +233,13 @@ admin_1 = st.Page(
     title="Admin Page",
     icon=":material/security:",
 )
+profile_page = st.Page(
+    "user/profile.py",
+    title="Profile",
+    icon=":material/person:")
 # Step 3: Group pages into categories
-account_page = [logout_page, home_page, reset_password_page]
+
+account_pages = [profile_page,reset_password_page,logout_page]
 application_pages = [app_1, app_2]
 admin_pages = [admin_1]
 # Define and manage page navigation based on user roles and authentication status.
@@ -254,11 +259,12 @@ page_dict = {}
 # Step 2: Assign pages based on user roles
 if st.session_state.roles[0] in ["general user", "admin"]:
     page_dict["Applications"] = application_pages
+    page_dict["Account"] = account_pages
 if st.session_state.roles[0] == "admin":
     page_dict["Admin"] = admin_pages
 # Step 3: Handle page navigation based on user roles
 if st.session_state['roles'][0] in ["general user", "admin"]:
-    pg = st.navigation({"Account": account_page} | page_dict)
+    pg = st.navigation({"Landing Page": [home_page]} | page_dict)
 elif st.session_state['roles'][0] is None:
     pg = st.navigation([st.Page(login)])
 # Step 4: Run the page navigation
