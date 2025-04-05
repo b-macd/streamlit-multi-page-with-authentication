@@ -63,16 +63,24 @@ The application should now be accessible at `http://localhost:8501`.
 
 ```
 streamlit-multi-page-with-authentication/
-├── .streamlit/
-│   └── secrets.toml
-├── pages/
-│   ├── Page1.py
-│   ├── Page2.py
+├── application_pages/
+│   ├── Example_Application_1.py
+│   ├── Example_Application_2.py
 │   └── ...
-├── app.py
-├── config.yaml
-├── requirements.txt
-└── README.md
+├── images/
+│   └── ...
+├── utilities/
+│   ├── activity_logs.csv
+│   ├── config.yaml
+│   ├── pagesetup.py
+│   └── ...
+├── utility_pages/
+│   ├── Admin_Page.py
+│   ├── Home_Page.py
+│   └── User_Profile.py
+├── LICENSE
+├── README.md
+└── requirements.txt
 ```
 
 ## Contributing
