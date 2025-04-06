@@ -58,23 +58,23 @@ def create_image_for_card(image_base_path, image_path):
     return data
 
 with col1:
-    container1 = st.container()
-    with container1:
-        has_clicked_1st_card = card(
-            image = create_image_for_card(image_base_path, "../images/IDSG Gray Logo-cropped.png"),
-            title = "1st Card",
-            text = "This is the card for the 1st Application",
-            styles={
-            "card": {
-                'aspect-ratio': "1 / 1",
-                "width": "100%", # <- make the card use the width of its container, note that it will not resize the height of the card automatically
-                #"min-height":"200px",
-                #"height": "100%" # <- if you want to set the card height to 300px
-                #"borderRadius": "0px",
-                "margin":"40px"
-            }
+    #container1 = st.container()
+    #with container1:
+    has_clicked_1st_card = card(
+        image = create_image_for_card(image_base_path, "../images/IDSG Gray Logo-cropped.png"),
+        title = "1st Card",
+        text = "This is the card for the 1st Application",
+        styles={
+        "card": {
+            'aspect-ratio': "1 / 1",
+            "width": "100%", # <- make the card use the width of its container, note that it will not resize the height of the card automatically
+            #"min-height":"200px",
+            #"height": "100%", # <- if you want to set the card height to 300px
+            #"borderRadius": "0px",
+            "margin":"40px"
         }
-        )
+    }
+    )
 
     if has_clicked_1st_card:
         st.switch_page("application_pages/Example_Application_1.py")

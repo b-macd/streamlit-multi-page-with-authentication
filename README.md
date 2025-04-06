@@ -1,5 +1,6 @@
 # Streamlit Multi-Page with Authentication
 
+### Try this app out at https://modern-multipage-st-app.streamlit.app/ !
 This project provides a template for a multi-page Streamlit application with built-in user authentication. It includes examples of how to handle user login, registration, and secure session management.
 
 ## Features
