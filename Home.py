@@ -58,33 +58,39 @@ def login():
     # Call the login function to display the login form and handle user authentication
     login()
     """
-    try:
-        authenticator.login()
-        #Sst.warning('Please enter your username and password')
-        with open(config_file_path, 'w') as file:
-            yaml.dump(config, file, default_flow_style=False) 
-        if st.session_state['authentication_status']:
-            st.success('Login Successfull!')
-            st.rerun()
-        elif st.session_state['authentication_status'] is False:
-            st.error('Username/password is incorrect')
-            if st.button(label="New User? Click Here to Register"):
-                st.session_state.roles[0] = "New User"
+    
+    col1, col2, col3 = st.columns([1,2,1])
+    with col2:
+        st.warning('Welcome! This is a working demo of a fully functioning multi-page app with role-based ' \
+        'attribute control. To access the site and see the functionality, please register as a new user. \n' \
+        '\nAs soon as you register, you will have immediate access.')
+        try:
+            authenticator.login()
+            #Sst.warning('Please enter your username and password')
+            with open(config_file_path, 'w') as file:
+                yaml.dump(config, file, default_flow_style=False) 
+            if st.session_state['authentication_status']:
+                st.success('Login Successfull!')
                 st.rerun()
-            elif st.button(label="Forgot Password? Click Here to Reset"):
-                st.session_state.roles[0] = "Password Reset"
-                st.rerun()
-        elif st.session_state['authentication_status'] is None:
-            st.warning("Please enter your username and password")
-            if st.button(label="New User? Click Here to Register"):
-                st.session_state.roles[0] = "New User"
-                st.rerun()
-            elif st.button(label="Forgot Password? Click Here to Reset"):
-                st.session_state.roles[0] = "Password Reset"
-                st.rerun()
+            elif st.session_state['authentication_status'] is False:
+                st.error('Username/password is incorrect')
+                if st.button(label="New User? Click Here to Register"):
+                    st.session_state.roles[0] = "New User"
+                    st.rerun()
+                elif st.button(label="Forgot Password? Click Here to Reset"):
+                    st.session_state.roles[0] = "Password Reset"
+                    st.rerun()
+            elif st.session_state['authentication_status'] is None:
+                st.warning("Please enter your username and password")
+                if st.button(label="New User? Click Here to Register"):
+                    st.session_state.roles[0] = "New User"
+                    st.rerun()
+                elif st.button(label="Forgot Password? Click Here to Reset"):
+                    st.session_state.roles[0] = "Password Reset"
+                    st.rerun()
 
-    except Exception as e:
-        st.error(e)
+        except Exception as e:
+            st.error(e)
 
 def logout():
     """
