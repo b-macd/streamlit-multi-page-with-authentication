@@ -262,8 +262,8 @@ admin_1 = st.Page(
     icon=":material/security:",
 )
 home_page = st.Page(
-    "utility_pages/Home_Page.py",
-    title="Home Page",
+    "utility_pages/Landing_Page.py",
+    title="Your Group Name Here",
     icon=":material/house:",
     default=(role in ["general user", 'admin']),
 )

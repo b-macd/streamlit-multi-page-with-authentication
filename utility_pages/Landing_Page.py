@@ -61,7 +61,7 @@ with col1:
     #container1 = st.container()
     #with container1:
     has_clicked_1st_card = card(
-        image = create_image_for_card(image_base_path, "../images/IDSG Gray Logo-cropped.png"),
+        image = create_image_for_card(image_base_path, "../images/IDSG Blued Logo.png"),
         title = "1st Card",
         text = "This is the card for the 1st Application",
         styles={
@@ -80,7 +80,7 @@ with col1:
         st.switch_page("application_pages/Example_Application_1.py")
 
     has_clicked_4th_card = card(
-        image = create_image_for_card(image_base_path, "../images/IDSG Gray Logo-cropped.png"),
+        image = create_image_for_card(image_base_path, "../images/IDSG Logo purple.png"),
         title = "4th Card",
         text = "This is the card for the 4th Application",
         styles={
